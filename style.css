@@ -35,8 +35,8 @@ h1 {
 .input-div {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
-    padding: 0 20px;
+    /* margin: 10px; */
+    /* padding: 0 20px; */
     width: 330px;
     
 }
@@ -46,6 +46,7 @@ h1 {
     border: 2px solid rgb(102, 5, 0);
     padding: 0 5px;
     font-size: 16px;
+    width: 220px;
 }
 
 input:focus {
@@ -78,13 +79,13 @@ input:focus {
 /* control panel */
 
 .control-btn {
-    width: 300px;
+    width: 330px;
    display: flex;    
    justify-content: space-between;
 }
 
 .control-btn button {
-    padding: 10px 25px;
+    padding: 10px 32px;
     border-radius: 8px;
     background-color: rgb(190, 53, 47);
     border: 2px solid rgb(102, 5, 0);
