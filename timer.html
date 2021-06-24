@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stopwatch</title>
 
+    <link rel="stylesheet" href="style.css">
+
     <!-- <script defer src="timerMain.js"></script> -->
     <script defer src="timer_V2.js"></script>
 
 </head>
 <body>
-    <h1>Timer - asynchronous</h1>
-    <h2>Stopwatch</h2>
-    <input type="seconds" class="inputSeconds">
-    <button class="inputButton">Enter</button>
-
-    <p class="displayTimer"></p>
-
-    <p><button class="start">Start</button> <button class="stop">Stop</button> <button class="reset">Reset</button></p>
+    <section class="timer">
+        <section class="main-box">
+            <h1>Timer</h1>
     
-
-
+            <div class="input-div">
+                <input type="text" name="seconds" placeholder="Input seconds..." class="inputSeconds">
+                <button class="inputButton">Enter</button>
+            </div>
+            
+            <div class="displayTimer"></div>
+    
+            <div class="control-btn">
+                <button class="start">Start</button>
+                <button class="stop">Stop</button>
+                <button class="reset">Reset</button>
+            </div>
+    
+        </section>
+    </section>
 </body>
 </html>
