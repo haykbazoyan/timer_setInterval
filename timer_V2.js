@@ -39,6 +39,8 @@ function displayLook(value) {
 inpButton.addEventListener("click", () => {
   secondsCount = Number(inpSeconds.value);
   displayLook(secondsCount);
+  clearInterval(stopWatch);
+  startButton.disabled = false;
 });
 
 function timer() {
@@ -75,7 +77,6 @@ resetButton.addEventListener("click", () => {
   startButton.disabled = false;
   // startButton.removeAttribute("disabled");
   displayLook(secondsCount);
-  // timer();
 });
 
 // timer();
