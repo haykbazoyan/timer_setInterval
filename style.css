@@ -14,10 +14,6 @@ h1 {
     color: rgb(0, 23, 90);
 }
 
-/* .timer {
-    margin: 100px 350px 200px 350px;
-} */
-
 .main-box {
     padding: 20px;
     width: 100%;
@@ -36,11 +32,8 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* margin: 10px; */
-    /* padding: 0 20px; */
-    width: 330px;
+    /* width: 330px; */
     align-items: center;
-    
 }
 
 .inputSeconds {
@@ -65,6 +58,7 @@ input:focus {
     border: 2px solid rgb(102, 5, 0);
     width: 50%;
 }
+
 .inputButton:hover {
     background-color: white;
     border: 2px solid rgb(102, 5, 0);
@@ -83,12 +77,13 @@ input:focus {
 /* control panel */
 
 .control-btn {
-    width: 330px;
+    /* width: 330px; */
    display: flex;    
    justify-content: space-between;
 }
 
 .control-btn button {
+    margin: 3px;
     padding: 10px 32px;
     border-radius: 50%;
     background-color: rgb(190, 53, 47);
@@ -103,30 +98,32 @@ input:focus {
     color: rgb(0, 23, 90);
 }
 
+@media screen and (max-width: 570px) {
+    .control-btn {
+        
+       display: flex;    
+       flex-direction: column;
+       align-items: center;
+       justify-content: space-between;
+    }
+
+    .control-btn button {
+        margin: 3px;
+    }    
+
+    .displayTimer {
+        font-size: 74px;
+        letter-spacing: 3px;
+    }
+}
+
 @media screen and (max-width: 400px) {
-    .input-div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        /* margin: 10px; */
-        /* padding: 0 20px; */
-        width: 100px;
-        height: 80px; 
+    .displayTimer {
+        font-size: 54px;
+        letter-spacing: 3px;
     }
 
-    .inputSeconds {
-        font-size: 14px;
-        width: 100px;
-        height: 30px;
-
-    }
-
-    .inputButton {
-        font-size: 14px;
-        /* padding: 5px 20px; */
-        cursor: pointer;
-        color: white;
-        background-color: rgb(190, 53, 47);
-        border: 2px solid rgb(102, 5, 0);
+    h1 {
+        font-size: 34px;
     }
 }
