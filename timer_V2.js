@@ -22,7 +22,7 @@ display.textContent =
 
 function displayLook(value) {
   if (Number.isNaN(Number(value))) {
-    return alert("Wrong Input");
+    return (display.textContent = "WRONG");
   }
   hours = Math.floor(value / 3600);
   minutes = Math.floor((value % 3600) / 60);
@@ -43,6 +43,8 @@ inpButton.addEventListener("click", () => {
 
 function timer() {
   if (hours === 0 && minutes === 0 && seconds === 0) {
+    display.textContent = "Time is over";
+    clearInterval(stopWatch);
     return 0;
   }
 
@@ -56,18 +58,24 @@ startButton.addEventListener("click", () => {
   }
   stopWatch = setInterval(timer, 1000);
   startButton.disabled = true;
+
+  startButton.classList.toggle("startDis");
+  // startButton.setAttribute("disabled", "disabled");
 });
 
 stopButton.addEventListener("click", () => {
   clearInterval(stopWatch);
   startButton.disabled = false;
+  // startButton.removeAttribute("disabled");
 });
 
 resetButton.addEventListener("click", () => {
   clearInterval(stopWatch);
-  secondsCount = Number(inpSeconds.value) + 1;
+  secondsCount = Number(inpSeconds.value);
   startButton.disabled = false;
-  timer();
+  // startButton.removeAttribute("disabled");
+  displayLook(secondsCount);
+  // timer();
 });
 
-timer();
+// timer();
