@@ -25,7 +25,7 @@ h1 {
     justify-content: space-around;
     background-color: white;
     border: 2px solid rgb(0, 23, 90);
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 /* Input place & Enter button */
@@ -92,12 +92,21 @@ input:focus {
     font-size: 16px;
 }
 
-.startDis {
-    background-color: seashell;
-    cursor: none;
+.control-btn button:hover {
+    background-color: white;
+    border: 2px solid rgb(102, 5, 0);
+    color: rgb(0, 23, 90);
+    cursor: pointer;
 }
 
-.control-btn button:hover {
+.startDisable {
+    background-color: white;
+    border: 2px solid rgb(102, 5, 0);
+    color: rgb(0, 23, 90);
+    cursor: default;
+}
+
+.startStyleBack {
     background-color: white;
     border: 2px solid rgb(102, 5, 0);
     color: rgb(0, 23, 90);
@@ -106,7 +115,6 @@ input:focus {
 
 @media screen and (max-width: 570px) {
     .control-btn {
-        
        display: flex;    
        flex-direction: column;
        align-items: center;

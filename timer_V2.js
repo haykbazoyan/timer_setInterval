@@ -40,6 +40,7 @@ inpButton.addEventListener("click", () => {
   secondsCount = Number(inpSeconds.value);
   displayLook(secondsCount);
   clearInterval(stopWatch);
+  disableStartBtn(false);
   startButton.disabled = false;
 });
 
@@ -47,6 +48,7 @@ function timer() {
   if (hours === 0 && minutes === 0 && seconds === 0) {
     display.textContent = "Time is over";
     clearInterval(stopWatch);
+    disableStartBtn(false);
     return 0;
   }
 
@@ -61,13 +63,17 @@ startButton.addEventListener("click", () => {
   stopWatch = setInterval(timer, 1000);
   startButton.disabled = true;
 
-  startButton.classList.toggle("startDis");
+  disableStartBtn(true);
+
+  // startButton.className += "startDis";
+  // startButton.classList.toggle("startDis");
   // startButton.setAttribute("disabled", "disabled");
 });
 
 stopButton.addEventListener("click", () => {
   clearInterval(stopWatch);
   startButton.disabled = false;
+  disableStartBtn(false);
   // startButton.removeAttribute("disabled");
 });
 
@@ -75,8 +81,19 @@ resetButton.addEventListener("click", () => {
   clearInterval(stopWatch);
   secondsCount = Number(inpSeconds.value);
   startButton.disabled = false;
+  disableStartBtn(false);
   // startButton.removeAttribute("disabled");
   displayLook(secondsCount);
 });
 
-// timer();
+// function for disable Start button
+
+function disableStartBtn(bool) {
+  if (bool) {
+    startButton.style.backgroundColor = "white";
+    startButton.style.color = "rgb(0, 23, 90)";
+    startButton.style.cursor = "default";
+  } else {
+    startButton.style = "startStyleBack";
+  }
+}
