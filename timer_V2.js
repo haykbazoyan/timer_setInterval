@@ -13,10 +13,17 @@ let displayHours = 0;
 let displayMinutes = 0;
 let displaySeconds = 0;
 
+let startButton = document.querySelector(".start");
+let stopButton = document.querySelector(".stop");
+let resetButton = document.querySelector(".reset");
+
 display.textContent =
   "0" + displayHours + ":" + "0" + displayMinutes + ":" + "0" + displaySeconds;
 
 function displayLook(value) {
+  if (Number.isNaN(Number(value))) {
+    return alert("Wrong Input");
+  }
   hours = Math.floor(value / 3600);
   minutes = Math.floor((value % 3600) / 60);
   seconds = Math.floor(value % 60);
@@ -43,11 +50,10 @@ function timer() {
   displayLook(secondsCount);
 }
 
-let startButton = document.querySelector(".start");
-let stopButton = document.querySelector(".stop");
-let resetButton = document.querySelector(".reset");
-
 startButton.addEventListener("click", () => {
+  if (secondsCount === 0) {
+    return 0;
+  }
   stopWatch = setInterval(timer, 1000);
   startButton.disabled = true;
 });
